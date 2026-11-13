@@ -19,6 +19,8 @@ ApplicationWindow {
 
     property bool helpVisible: false
     property bool fullscreen: visibility === Window.FullScreen
+
+    Binding { target: wakeLock; property: "active"; value: win.fullscreen || (backend.playing && backend.hasPhotos) }
     // The name changes when the photo appears, not when it starts loading.
     property string shownPerson: ""
     property Image front: layerA

@@ -25,8 +25,8 @@ For Omarchy or Arch Linux on x86_64. Download the package from the
 install it:
 
 ```sh
-curl -LO https://github.com/midnightslicer/turns/releases/download/v0.1.0/turns-0.1.0-1-x86_64.pkg.tar.zst
-sudo pacman -U ./turns-0.1.0-1-x86_64.pkg.tar.zst
+curl -LO https://github.com/midnightslicer/turns/releases/download/v0.1.1/turns-0.1.1-1-x86_64.pkg.tar.zst
+sudo pacman -U ./turns-0.1.1-1-x86_64.pkg.tar.zst
 ```
 
 Or build the latest code yourself, which also works on aarch64:

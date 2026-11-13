@@ -11,11 +11,12 @@
 #include "portalfilepicker.h"
 #include "theme.h"
 #include "translator.h"
+#include "wakelock.h"
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
     app.setApplicationName("turns");
-    app.setApplicationVersion("0.1.0");
+    app.setApplicationVersion("0.1.1");
 
     // Matches the window to turns.desktop, so the compositor (Wayland app_id)
     // and the launcher pick up the installed icon.
@@ -30,6 +31,7 @@ int main(int argc, char *argv[]) {
     app.installTranslator(&translator);
 
     Theme theme;
+    WakeLock wakeLock;
     PortalFilePicker picker;
     Backend backend(&picker);
     QObject::connect(&translator, &Translator::changed, &backend, &Backend::retranslate);
@@ -45,6 +47,7 @@ int main(int argc, char *argv[]) {
     engine.rootContext()->setContextProperty("translator", &translator);
     engine.rootContext()->setContextProperty("theme", &theme);
     engine.rootContext()->setContextProperty("backend", &backend);
+    engine.rootContext()->setContextProperty("wakeLock", &wakeLock);
     engine.load(QUrl("qrc:/Main.qml"));
     if (engine.rootObjects().isEmpty())
         return 1;

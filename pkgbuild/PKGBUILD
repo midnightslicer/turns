@@ -1,5 +1,5 @@
 pkgname=turns
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc='A photo slideshow where the people in a folder take turns'
 arch=('x86_64' 'aarch64')

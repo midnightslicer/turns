@@ -10,6 +10,7 @@ HEADERS += \
     src/portalfilepicker.h \
     src/shuffler.h \
     src/theme.h \
+    src/wakelock.h \
     src/translator.h
 
 SOURCES += \
@@ -18,6 +19,7 @@ SOURCES += \
     src/portalfilepicker.cpp \
     src/shuffler.cpp \
     src/theme.cpp \
+    src/wakelock.cpp \
     src/translator.cpp
 
 RESOURCES += src/resources.qrc
